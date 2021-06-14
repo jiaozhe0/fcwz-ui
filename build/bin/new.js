@@ -52,12 +52,12 @@ export default ${ComponentName};`
   {
     filename: 'src/main.vue',
     content: `<template>
-  <div class="el-${componentname}"></div>
+  <div class="fc-${componentname}"></div>
 </template>
 
 <script>
 export default {
-  name: 'El${ComponentName}'
+  name: 'Fc${ComponentName}'
 };
 </script>`
   },
@@ -147,10 +147,10 @@ const elementTsPath = path.join(__dirname, '../../types/element-ui.d.ts');
 
 let elementTsText = `${fs.readFileSync(elementTsPath)}
 /** ${ComponentName} Component */
-export class ${ComponentName} extends El${ComponentName} {}`;
+export class ${ComponentName} extends Fc${ComponentName} {}`;
 
 const index = elementTsText.indexOf('export') - 1;
-const importString = `import { El${ComponentName} } from './${componentname}'`;
+const importString = `import { Fc${ComponentName} } from './${componentname}'`;
 
 elementTsText =
   elementTsText.slice(0, index) +
