@@ -89,6 +89,7 @@ import PhotoLayer from '../packages/photo-layer/index.js';
 import PageSvg from '../packages/page-svg/index.js';
 import TextLayer from '../packages/text-layer/index.js';
 import ImageLayer from '../packages/image-layer/index.js';
+import PhotoAlbum from '../packages/photo-album/index.js';
 import locale from 'element-ui/src/locale';
 import CollapseTransition from 'element-ui/src/transitions/collapse-transition';
 
@@ -177,6 +178,7 @@ const components = [
   PageSvg,
   TextLayer,
   ImageLayer,
+  PhotoAlbum,
   CollapseTransition
 ];
 
@@ -305,5 +307,6 @@ export default {
   PhotoLayer,
   PageSvg,
   TextLayer,
-  ImageLayer
+  ImageLayer,
+  PhotoAlbum
 };

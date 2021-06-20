@@ -87,5 +87,6 @@
   "photo-layer": "./packages/photo-layer/index.js",
   "page-svg": "./packages/page-svg/index.js",
   "text-layer": "./packages/text-layer/index.js",
-  "image-layer": "./packages/image-layer/index.js"
+  "image-layer": "./packages/image-layer/index.js",
+  "photo-album": "./packages/photo-album/index.js"
 }

@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-06-06 22:50:27
- * @LastEditTime: 2021-06-11 23:59:22
+ * @LastEditTime: 2021-06-20 15:19:04
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /element/packages/page/src/line.vue
@@ -53,5 +53,20 @@ export default {
   }
 };
 </script>
-<style lang='less' scoped>
+<style lang='scss' scoped>
+.bleed-item {
+  position: absolute;
+  background-color: red;
+  z-index: 2;
+
+  &.horizontal {
+    height: 1px;
+    width: 100%;
+  }
+
+  &.vertical {
+    width: 1px;
+    height: 100%;
+  }
+}
 </style>

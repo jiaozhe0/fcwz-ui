@@ -1,0 +1,193 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-06-16 21:21:18
+ * @LastEditTime: 2021-06-16 21:48:03
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /element/test.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>transition绘制翻页效果</title>
+  <style>
+    .btn {
+      margin: 40px;
+    }
+
+    .box {
+      display: table;
+    }
+
+    #left {
+      /* float: left; */
+      display: table-cell;
+      background-color: black;
+      margin-left: 40px;
+      width: 200px;
+      height: 200px;
+      padding: 0;
+      overflow: hidden;
+      perspective: 800;
+      transform-style: preserve-3d;
+      -webkit-perspective: 800;
+      -webkit-transform-style: -webkit-preserve-3d;
+    }
+
+    #right {
+      /* float: left; */
+      display: table-cell;
+      background-color: black;
+      width: 200px;
+      height: 200px;
+      padding: 0;
+      overflow: hidden;
+      perspective: 800;
+      transform-style: preserve-3d;
+      -webkit-perspective: 800;
+      -webkit-transform-style: -webkit-preserve-3d;
+    }
+
+    #pagel1,
+    #pagel2,
+    #pagel3,
+    #pagel4 {
+      position: absolute;
+      width: 158px;
+      height: 158px;
+      background-color: grey;
+      padding: 20px;
+      transform-origin: right center;
+      transition: transform 1s linear;
+      -webkit-transition: transform 1s linear;
+      -webkit-transform-origin: right center;
+      border: 1px solid red;
+    }
+
+    #pagel2,
+    #pagel3,
+    #pagel4 {
+      transform: rotateY(180deg);
+      -webkit-transform: rotateY(180deg);
+    }
+
+    #pager1,
+    #pager2,
+    #pager3,
+    #pager4 {
+      position: absolute;
+      width: 158px;
+      height: 158px;
+      background-color: grey;
+      padding: 20px;
+      transition: transform 1s linear;
+      -webkit-transition: transform 1s linear;
+      transform-origin: left center;
+      -webkit-transform-origin: left center;
+      border: 1px solid red;
+    }
+
+    #pager1 {
+      z-index: -10;
+    }
+
+    #pager2 {
+      z-index: -20;
+    }
+
+    #pager3 {
+      z-index: -30;
+    }
+
+    #pager4 {
+      z-index: -40;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- <div id="book">
+    <div id="page1">1</div>
+    <div id="page2">2</div>
+    <div id="page3">3</div>
+    <div id="page4">4</div>
+  </div>
+  <div class="btn">
+    <a href="javascript:prev()">上一页</a>  <a href="javascript:next()">下一页</a>
+  </div> -->
+  <div class="box">
+    <div id="left">
+      <div id="pagel1">第1页</div>
+      <div id="pagel2">第3页</div>
+      <div id="pagel3">第5页</div>
+      <div id="pagel4">第7页</div>
+    </div>
+    <div id="right">
+      <div id="pager1">第2页</div>
+      <div id="pager2">第4页</div>
+      <div id="pager3">第6页</div>
+      <div id="pager4">第8页</div>
+    </div>
+  </div>
+  <div style="clear:both;"></div>
+  <div class="btn">
+    <a href="javascript:prev2()">上一页</a>  <a href="javascript:next2()">下一页</a>
+  </div>
+  <script>
+    var curIndex = 1;
+
+    function prev() {
+      if (curIndex == 1) return;
+      var lPage = document.getElementById('page' + curIndex);
+      var llPage = document.getElementById('page' + (curIndex - 1));
+      var rPage = document.getElementById('page' + (curIndex + 1));
+      if (llPage) llPage.style.zIndex = 100;
+      if (rPage) rPage.style.zIndex = 0;
+      lPage.style.transform = 'rotateY(180deg)';
+      lPage.style.webkitTransform = 'rotateY(180deg)';
+      curIndex--;
+    }
+
+    function next() {
+      if (curIndex == 4) return;
+      curIndex++;
+      var lPage = document.getElementById('page' + curIndex);
+      var rPage = document.getElementById('page' + (curIndex + 1));
+      if (rPage) rPage.style.zIndex = 100;
+      lPage.style.transform = 'rotateY(0deg)';
+      lPage.style.webkitTransform = 'rotateY(0deg)';
+    }
+    var curPage = 1;
+
+    function prev2() {
+      if (curPage === 1) return;
+      // 左边翻页
+      var lPage = document.getElementById('pagel' + curPage);
+      lPage.style.transform = 'rotateY(180deg)';
+      lPage.style.webkitTransform = 'rotateY(180deg)';
+      // 右边翻页
+      var rPage = document.getElementById('pager' + (curPage - 1));
+      rPage.style.transform = 'rotateY(0deg)';
+      rPage.style.webkitTransform = 'rotateY(0deg)';
+      curPage--;
+    }
+
+    function next2() {
+      if (curPage === 4) return;
+      // 左边翻页
+      // var lPage = document.getElementById('pagel' + (curPage + 1));
+      // console.log('curPage', curPage, curPage + 1);
+      // lPage.style.transform = 'rotateY(0deg)';
+      // lPage.style.webkitTransform = 'rotateY(0deg)';
+      // 右边翻页
+      var rPage = document.getElementById('pager' + curPage);
+      rPage.style.transform = 'rotateY(-180deg)';
+      rPage.style.webkitTransform = 'rotateY(-180deg)';
+      curPage++;
+    }
+  </script>
+</body>
+
+</html>

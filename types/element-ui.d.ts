@@ -90,6 +90,7 @@ import { ElPhotoLayer } from './photo-layer'
 import { ElPageSvg } from './page-svg'
 import { ElTextLayer } from './text-layer'
 import { ElImageLayer } from './image-layer'
+import { FcPhotoAlbum } from './photo-album'
 
 export interface InstallationOptions {
   locale: any,
@@ -384,3 +385,6 @@ export class TextLayer extends ElTextLayer {}
 
 /** ImageLayer Component */
 export class ImageLayer extends ElImageLayer {}
+
+/** PhotoAlbum Component */
+export class PhotoAlbum extends FcPhotoAlbum {}

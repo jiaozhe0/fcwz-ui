@@ -2,9 +2,15 @@
 @import 'common/var';
 
 @include b(page) {
-  border: 2px solid orange;
   display: table;
   position: relative;
+
+  &.is-view {
+    .bleed {
+      border-color: #fff !important;
+    }
+  }
+
   .middle-line {
     position: absolute;
     left: 50%;
@@ -13,10 +19,12 @@
     z-index: 2;
     background-color: blue;
   }
+
   .bleed-item {
     position: absolute;
     background-color: blue;
     z-index: 2;
+
     &.horizontal {
       height: 1px;
       width: 100%;
@@ -31,6 +39,7 @@
   .border-item {
     position: absolute;
     background: olivedrab;
+
     &.horizontal {
       width: 100%;
     }
@@ -38,19 +47,33 @@
     &.vertical {
       height: 100%;
     }
+
+    z-index: 9;
   }
+
+  .el-page-wrap {
+    position: relative;
+    top: 0;
+    left: 0;
+    font-size: inherit;
+    overflow: hidden;
+
+  }
+
   .el-page-content {
     position: relative;
     display: table;
     font-size: inherit;
-    border: 1px solid red;
     background: #eee;
   }
 
   .layout-item {
-    position: relative;
+    position: absolute;
+    width: 100%;
+    height: 100%;
     display: table-cell;
     font-size: inherit;
+
     .layout-item-content {
       position: absolute;
       left: 0;
@@ -60,19 +83,23 @@
       background: #fff;
       font-size: inherit;
     }
+
     .pg-layer-div {
       position: absolute;
+
       .pg-layer-mask {
         display: none;
         color: #fff;
         background-color: rgba(0, 0, 0, 0.4);
       }
+
       &:hover {
         .pg-layer-mask {
           display: block;
         }
       }
     }
+
     .bleed {
       position: absolute;
       top: 0;

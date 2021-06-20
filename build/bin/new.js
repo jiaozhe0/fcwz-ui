@@ -121,13 +121,27 @@ export declare class El${ComponentName} extends ElementUIComponent {
 
 // 将组件添加到 components.json
 const componentsFile = require('../../components.json');
+const fcComponentsFile = require('../../fc-components.json'); // fc
+
 if (componentsFile[componentname]) {
   console.error(`${componentname} 已存在.`);
   process.exit(1);
 }
+// 方寸组件 fc
+if (fcComponentsFile[componentname]) {
+  console.error(`${componentname} 已存在.`);
+  process.exit(1);
+}
 componentsFile[componentname] = `./packages/${componentname}/index.js`;
+fcComponentsFile[componentname] = `./packages/${componentname}/index.js`; // fc
+
 fileSave(path.join(__dirname, '../../components.json'))
   .write(JSON.stringify(componentsFile, null, '  '), 'utf8')
+  .end('\n');
+
+// fc
+fileSave(path.join(__dirname, '../../fc-components.json'))
+  .write(JSON.stringify(fcComponentsFile, null, '  '), 'utf8')
   .end('\n');
 
 // 添加到 index.scss
@@ -175,7 +189,7 @@ const navConfigFile = require('../../examples/nav.config.json');
 // 路由配置
 Object.keys(navConfigFile).forEach(lang => {
   let groups = navConfigFile[lang][4].groups;
-  groups[groups.length - 1].list.push({
+  groups[0].list.push({
     path: `/${componentname}`,
     title:
       lang === 'zh-CN' && componentname !== chineseName

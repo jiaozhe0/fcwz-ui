@@ -1,0 +1,7 @@
+{
+  "page": "./packages/page/index.js",
+  "page-svg": "./packages/page-svg/index.js",
+  "photo-layer": "./packages/photo-layer/index.js",
+  "text-layer": "./packages/text-layer/index.js",
+  "photo-album": "./packages/photo-album/index.js"
+}

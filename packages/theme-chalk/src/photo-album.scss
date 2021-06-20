@@ -1,0 +1,108 @@
+@import 'mixins/mixins';
+@import 'common/var';
+
+@include b(photo-album) {
+  display: table;
+  perspective: 800;
+  transform-style: preserve-3d;
+  -webkit-perspective: 800;
+  -webkit-transform-style: -webkit-preserve-3d;
+
+
+  .photo-ablum-content {
+    display: table;
+    perspective: 800;
+    transform-style: preserve-3d;
+    -webkit-perspective: 800;
+    -webkit-transform-style: -webkit-preserve-3d;
+    overflow: hidden;
+
+  }
+
+  .left,
+  .right {
+    position: relative;
+    display: table-cell;
+    font-size: inherit;
+    perspective: 800;
+    transform-style: preserve-3d;
+    -webkit-perspective: 800;
+    -webkit-transform-style: -webkit-preserve-3d;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      content: '';
+      z-index: 99;
+    }
+
+    .layout-item {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transition: transform 1s linear;
+      -webkit-transition: transform 1s linear;
+    }
+  }
+
+  .left {
+    &::before {
+      left: 0;
+      background-image: -webkit-gradient(linear, left top, right top, color-stop(.95, transparent), color-stop(1, #dadada));
+    }
+
+    &::after {
+      left: 0;
+      width: 5px;
+      -webkit-box-shadow: 1px 0 1px rgb(0, 0, 0 / 15%), 4px 0 0 0 #eee, 4px 0 1px 0 rgb(0, 0, 0 / 15%), 8px 0 0 0 #eee, 8px 0 1px 0 rgb(0, 0, 0 / 15%), 9px 0 0 0 #eee;
+    }
+
+    div.layout-item {
+      transform-origin: right center;
+      transition: transform 0.8s linear;
+      -webkit-transition: transform 0.8s linear;
+      -webkit-transform-origin: right center;
+      -moz-transition: transform 0.8s linear;
+      -ms-transition: transform 0.8s linear;
+      -o-transition: transform 0.8s linear;
+    }
+
+    div.layout-item~div.layout-item {
+      transform: rotateY(180deg);
+      -webkit-transform: rotateY(180deg);
+      -moz-transform: rotateY(180deg);
+      -ms-transform: rotateY(180deg);
+      -o-transform: rotateY(180deg);
+    }
+  }
+
+  .right {
+    &::before {
+      left: -0;
+      background-image: -webkit-linear-gradient(right, transparent 95%, #cacaca);
+    }
+
+    &::after {
+      right: 5px;
+      width: 5px;
+      -webkit-box-shadow: 1px 0 1px rgb(0, 0, 0 / 15%), 4px 0 0 0 #eee, 4px 0 1px 0 rgb(0, 0, 0 / 15%), 8px 0 0 0 #eee, 8px 0 1px 0 rgb(0, 0, 0 / 15%), 9px 0 0 0 #eee;
+    }
+
+    .layout-item {
+      transform-origin: left center;
+      -webkit-transform-origin: left center;
+
+      &.fill {
+        width: 200%;
+        left: -100%;
+        // transform-origin: center center;
+        // -webkit-transform-origin: center center;
+      }
+    }
+  }
+}

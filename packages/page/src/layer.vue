@@ -1,33 +1,34 @@
 <!--
  * @Author: your name
  * @Date: 2021-06-12 09:15:33
- * @LastEditTime: 2021-06-12 18:19:44
+ * @LastEditTime: 2021-06-20 15:22:09
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /element/packages/page/src/layer.vue
 -->
 <template>
-  <div class="pg-layer-div"
-       :style="position">
-    <div v-if="bleed.borderWidth"
-         class="bleed"
-         :style="bleed"></div>
-
-    <div class="pg-layer-mask"
-         v-if="layer.data">点击编辑</div>
-    <component :is="layer.type+'Layer'"
+  <div :style="position"
+       class="pg-layer-div">
+    <component :is="layer.type + 'Layer'"
                :scale="scale"
+               :lIndex="lIndex"
+               :pageId="pageId"
+               :bleed="bleed"
                :layer="layer"></component>
   </div>
 </template>
 <script>
-import PhotoLayer from 'element-ui/packages/photo-layer';
+import PhotoLayer from './layer-photo';
+import TextLayer from 'element-ui/packages/text-layer';
 export default {
   components: {
-    PhotoLayer
+    PhotoLayer,
+    TextLayer
   },
   props: {
     layer: Object,
+    lIndex: Number,
+    pageId: String,
     bleed: [Object, Array],
     scale: {
       type: Number,
@@ -47,4 +48,8 @@ export default {
   }
 };
 </script>
-
+<style lang="scss" scoped>
+.pg-layer-div {
+  position: absolute;
+}
+</style>
