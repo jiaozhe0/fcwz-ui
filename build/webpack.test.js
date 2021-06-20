@@ -18,7 +18,7 @@ const webpackConfig = {
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: Object.assign(config.alias, {
-      'vue$': 'vue/dist/vue.common.js'
+      vue$: 'vue/dist/vue.common.js'
     }),
     modules: ['node_modules']
   },
@@ -44,6 +44,10 @@ const webpackConfig = {
         loaders: ['style-loader', 'css-loader']
       },
       {
+        test: /\.(scss|css)$/,
+        use: ['style-loader', 'css-loader', 'sass-loader']
+      },
+      {
         test: /\.(svg|otf|ttf|woff2?|eot|gif|png|jpe?g)(\?\S*)?$/,
         loader: 'url-loader',
         query: {
@@ -53,15 +57,11 @@ const webpackConfig = {
       }
     ]
   },
-  plugins: [
-    new VueLoaderPlugin()
-  ]
+  plugins: [new VueLoaderPlugin()]
 };
 
 if (!process.env.CI_ENV) {
-  webpackConfig.plugins.push(
-    new ProgressBarPlugin()
-  );
+  webpackConfig.plugins.push(new ProgressBarPlugin());
 }
 
 module.exports = webpackConfig;
