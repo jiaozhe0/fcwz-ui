@@ -2,7 +2,7 @@
 ###
  # @Author: your name
  # @Date: 2021-06-06 13:18:40
- # @LastEditTime: 2021-06-14 13:32:55
+ # @LastEditTime: 2021-06-20 18:35:14
  # @LastEditors: Please set LastEditors
  # @Description: In User Settings Edit
  # @FilePath: /element/build/release.sh
@@ -25,7 +25,7 @@ then
   VERSION=$VERSION npm run dist
 
   # ssr test
-  node test/ssr/require.test.js            
+  # node test/ssr/require.test.js            
 
   # publish theme
   echo "Releasing theme-chalk $VERSION ..."
