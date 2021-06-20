@@ -2,7 +2,7 @@
 ###
  # @Author: your name
  # @Date: 2021-06-06 13:18:40
- # @LastEditTime: 2021-06-20 18:35:14
+ # @LastEditTime: 2021-06-20 18:38:03
  # @LastEditors: Please set LastEditors
  # @Description: In User Settings Edit
  # @FilePath: /element/build/release.sh
@@ -28,16 +28,16 @@ then
   # node test/ssr/require.test.js            
 
   # publish theme
-  echo "Releasing theme-chalk $VERSION ..."
-  cd packages/theme-chalk
-  npm version $VERSION --message "[release] $VERSION"
-  if [[ $VERSION =~ "beta" ]]
-  then
-    npm publish --tag beta
-  else
-    npm publish
-  fi
-  cd ../..
+  # echo "Releasing theme-chalk $VERSION ..."
+  # cd packages/theme-chalk
+  # npm version $VERSION --message "[release] $VERSION"
+  # if [[ $VERSION =~ "beta" ]]
+  # then
+  #   npm publish --tag beta
+  # else
+  #   npm publish
+  # fi
+  # cd ../..
 
   # commit
   git add -A
