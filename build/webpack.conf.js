@@ -19,7 +19,7 @@ module.exports = {
     libraryExport: 'default',
     library: 'ELEMENT',
     umdNamedDefine: true,
-    globalObject: 'typeof self !== \'undefined\' ? self : this'
+    globalObject: "typeof self !== 'undefined' ? self : this"
   },
   resolve: {
     extensions: ['.js', '.vue', '.json'],
@@ -61,11 +61,12 @@ module.exports = {
             preserveWhitespace: false
           }
         }
+      },
+      {
+        test: /.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader']
       }
     ]
   },
-  plugins: [
-    new ProgressBarPlugin(),
-    new VueLoaderPlugin()
-  ]
+  plugins: [new ProgressBarPlugin(), new VueLoaderPlugin()]
 };
