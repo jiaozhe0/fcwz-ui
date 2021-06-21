@@ -2,7 +2,7 @@
 ###
  # @Author: your name
  # @Date: 2021-06-06 13:18:40
- # @LastEditTime: 2021-06-14 13:34:08
+ # @LastEditTime: 2021-06-21 17:59:19
  # @LastEditors: Please set LastEditors
  # @Description: In User Settings Edit
  # @FilePath: /element/build/git-release.sh
