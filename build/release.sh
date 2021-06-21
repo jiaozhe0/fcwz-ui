@@ -2,12 +2,12 @@
 ###
  # @Author: your name
  # @Date: 2021-06-06 13:18:40
- # @LastEditTime: 2021-06-21 17:53:23
+ # @LastEditTime: 2021-06-21 18:13:04
  # @LastEditors: Please set LastEditors
  # @Description: In User Settings Edit
  # @FilePath: /element/build/release.sh
 ### 
-echo 'release.sh'
+echo '执行release.sh'
 set -e
 
 # git checkout main&&

@@ -2,12 +2,12 @@
 ###
  # @Author: your name
  # @Date: 2021-06-06 13:18:40
- # @LastEditTime: 2021-06-21 17:59:19
+ # @LastEditTime: 2021-06-21 18:06:36
  # @LastEditors: Please set LastEditors
  # @Description: In User Settings Edit
  # @FilePath: /element/build/git-release.sh
 ### 
-echo '999git-release.sh'
+echo '执行git-release.sh'
 # git checkout dev
 
 if test -n "$(git status --porcelain)"; then
