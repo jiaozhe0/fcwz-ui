@@ -2,7 +2,7 @@
 ###
  # @Author: your name
  # @Date: 2021-06-06 13:18:40
- # @LastEditTime: 2021-06-20 18:47:44
+ # @LastEditTime: 2021-06-21 17:53:23
  # @LastEditors: Please set LastEditors
  # @Description: In User Settings Edit
  # @FilePath: /element/build/release.sh
@@ -10,8 +10,8 @@
 echo 'release.sh'
 set -e
 
-git checkout main&&
-git merge dev
+# git checkout main&&
+# git merge dev
 
 VERSION=`npx select-version-cli`
 # 设置组件库的版本信息
@@ -23,11 +23,11 @@ then
 
   # build
   VERSION=$VERSION npm run dist
- echo "why???? !!!!"
+
   # ssr test
   # node test/ssr/require.test.js            
 
-  # publish theme
+  # publish theme 打包css样式
   # echo "Releasing theme-chalk $VERSION ..."
   # cd packages/theme-chalk
   # npm version $VERSION --message "[release] $VERSION"
@@ -47,9 +47,9 @@ then
   # publish
   git push origin main&&
   git push origin refs/tags/v$VERSION
-  git checkout dev
-  git rebase main&&
-  git push origin dev
+  # git checkout dev
+  # git rebase main&&
+  # git push origin dev
 
   if [[ $VERSION =~ "beta" ]]
   then
