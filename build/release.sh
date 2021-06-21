@@ -2,7 +2,7 @@
 ###
  # @Author: your name
  # @Date: 2021-06-06 13:18:40
- # @LastEditTime: 2021-06-21 18:13:04
+ # @LastEditTime: 2021-06-21 18:16:44
  # @LastEditors: Please set LastEditors
  # @Description: In User Settings Edit
  # @FilePath: /element/build/release.sh
@@ -39,6 +39,8 @@ then
   # fi
   # cd ../..
 
+  
+  echo "执行git 提交"
   # commit
   git add -A
   git commit -m "[build] $VERSION"
