@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-06-11 22:19:28
- * @LastEditTime: 2021-06-22 23:19:27
+ * @LastEditTime: 2021-06-22 23:22:49
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /element/packages/page/src/main.vue
@@ -46,7 +46,7 @@ export default {
       type: Object,
       default() {
         return {
-          width: 1,
+          width: 2,
           height: 1,
           layers: [] // , { id: 2 }
         };
