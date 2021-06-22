@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-06-11 22:19:28
- * @LastEditTime: 2021-06-22 22:34:30
+ * @LastEditTime: 2021-06-22 23:19:27
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /element/packages/page/src/main.vue
@@ -57,7 +57,7 @@ export default {
       default() {
         return {
           output: '',
-          bleed: [3, 3, 3, 3],
+          bleed: [4, 4, 4, 4],
           border: [40, 40, 40, 40],
           type: ''
         };
