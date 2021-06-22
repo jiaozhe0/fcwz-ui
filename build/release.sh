@@ -2,14 +2,15 @@
 ###
  # @Author: your name
  # @Date: 2021-06-06 13:18:40
- # @LastEditTime: 2021-06-22 10:47:29
+ # @LastEditTime: 2021-06-22 10:52:15
+ # @LastEditTime: 2021-06-22 10:49:30
  # @LastEditors: Please set LastEditors
  # @Description: In User Settings Edit
  # @FilePath: /element/build/release.sh
 ### 
 echo '执行release.sh'
 set -e
-
+# 我在dev开发
 git checkout main&&
 git merge dev
 
