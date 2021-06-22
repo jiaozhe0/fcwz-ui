@@ -2,12 +2,7 @@
 ###
  # @Author: your name
  # @Date: 2021-06-06 13:18:40
-<<<<<<< HEAD
- # @LastEditTime: 2021-06-22 18:51:49
- # @LastEditTime: 2021-06-22 10:49:30
-=======
- # @LastEditTime: 2021-06-22 10:59:58
->>>>>>> dev
+ # @LastEditTime: 2021-06-22 21:37:03
  # @LastEditors: Please set LastEditors
  # @Description: In User Settings Edit
  # @FilePath: /element/build/release.sh
@@ -53,9 +48,9 @@ then
   # publish
   git push origin main&&
   git push origin refs/tags/v$VERSION
-  # git checkout dev
-  # git rebase main&&
-  # git push origin dev
+  git checkout dev
+  git rebase main&&
+  git push origin dev
 
   if [[ $VERSION =~ "beta" ]]
   then
