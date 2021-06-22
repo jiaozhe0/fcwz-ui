@@ -2,12 +2,12 @@
 ###
  # @Author: your name
  # @Date: 2021-06-06 13:18:40
- # @LastEditTime: 2021-06-22 10:49:30
+ # @LastEditTime: 2021-06-22 10:59:58
  # @LastEditors: Please set LastEditors
  # @Description: In User Settings Edit
  # @FilePath: /element/build/release.sh
 ### 
-echo 'release.sh'
+echo '执行release.sh'
 set -e
 # 我在dev开发
 git checkout main&&
@@ -23,11 +23,11 @@ then
 
   # build
   VERSION=$VERSION npm run dist
- echo "why???? !!!!"
+
   # ssr test
   # node test/ssr/require.test.js            
 
-  # publish theme
+  # publish theme 提交样式到
   # echo "Releasing theme-chalk $VERSION ..."
   # cd packages/theme-chalk
   # npm version $VERSION --message "[release] $VERSION"
