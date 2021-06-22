@@ -2,8 +2,12 @@
 ###
  # @Author: your name
  # @Date: 2021-06-06 13:18:40
- # @LastEditTime: 2021-06-22 10:52:15
+<<<<<<< HEAD
+ # @LastEditTime: 2021-06-22 16:38:52
  # @LastEditTime: 2021-06-22 10:49:30
+=======
+ # @LastEditTime: 2021-06-22 10:59:58
+>>>>>>> dev
  # @LastEditors: Please set LastEditors
  # @Description: In User Settings Edit
  # @FilePath: /element/build/release.sh
@@ -27,8 +31,7 @@ then
 
   # ssr test
   # node test/ssr/require.test.js            
-
-  # publish theme 打包css样式
+  # publish theme 提交样式到
   # echo "Releasing theme-chalk $VERSION ..."
   # cd packages/theme-chalk
   # npm version $VERSION --message "[release] $VERSION"

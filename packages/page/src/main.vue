@@ -1,27 +1,30 @@
 <!--
  * @Author: your name
  * @Date: 2021-06-11 22:19:28
- * @LastEditTime: 2021-06-20 18:48:46
+ * @LastEditTime: 2021-06-22 14:04:43
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /element/packages/page/src/main.vue
 -->
 <template>
-  <div :class="['el-page', { 'is-view': view }]" :style="fontSize">
-    <div v-if="frame.isLine" class="middle-line"></div>
-    <pg-bleed v-if="!bleed.borderWidth" :bleed="bleed"></pg-bleed>
+  <div :class="['el-page', { 'is-view': view }]"
+       :style="fontSize">
+    <div v-if="frame.isLine"
+         class="middle-line"></div>
+    <pg-bleed v-if="!bleed.borderWidth"
+              :bleed="bleed"></pg-bleed>
     <pg-border :border="frame.border"></pg-border>
-    <div class="el-page-wrap" :style="size">
-      <div class="el-page-content" :style="sizeWithBleed">
-        <pg-layout
-          v-for="(item, index) in page.layers"
-          :key="index"
-          :pageId="page.id"
-          :lIndex="index"
-          :bleed="bleed"
-          :scale="scale"
-          :layout="item"
-        ></pg-layout>
+    <div class="el-page-wrap"
+         :style="size">
+      <div class="el-page-content"
+           :style="sizeWithBleed">
+        <pg-layout v-for="(item, index) in page.layers"
+                   :key="index"
+                   :pageId="page.id"
+                   :lIndex="index"
+                   :bleed="bleed"
+                   :scale="scale"
+                   :layout="item"></pg-layout>
       </div>
     </div>
   </div>
@@ -56,9 +59,7 @@ export default {
           output: '',
           bleed: [3, 3, 3, 3],
           border: [40, 40, 40, 40],
-          type: '',
-          isLine: false,
-          isBridge: false
+          type: ''
         };
       }
     },
