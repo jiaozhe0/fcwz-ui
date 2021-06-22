@@ -2,13 +2,13 @@
 ###
  # @Author: your name
  # @Date: 2021-06-06 13:18:40
- # @LastEditTime: 2021-06-21 18:06:36
+ # @LastEditTime: 2021-06-22 22:30:12
  # @LastEditors: Please set LastEditors
  # @Description: In User Settings Edit
  # @FilePath: /element/build/git-release.sh
 ### 
 echo '执行git-release.sh'
-# git checkout dev
+git checkout dev
 
 if test -n "$(git status --porcelain)"; then
   echo 'Unclean working tree. Commit or stash changes first.' >&2;
