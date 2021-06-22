@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-06-11 22:19:28
- * @LastEditTime: 2021-06-22 14:04:43
+ * @LastEditTime: 2021-06-22 17:03:24
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /element/packages/page/src/main.vue
@@ -137,7 +137,7 @@ export default {
     width: 1px;
     height: 100%;
     z-index: 2;
-    background-color: red;
+    background-color: orange;
   }
   .el-page-wrap {
     position: relative;
